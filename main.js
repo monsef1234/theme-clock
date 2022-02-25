@@ -49,11 +49,18 @@ const setTime = () => {
   const secHand = document.querySelector(".sec-hand");
   const hour = new Date().getHours();
   const hourForClock = hour % 12;
+  // console.log(hourForClock);
   const min = new Date().getMinutes();
   const sec = new Date().getSeconds();
-  hourHand.style.transform = `rotate(${scale(hourForClock, 0, 11, 0, 360)}deg)`;
-  minHand.style.transform = `rotate(${scale(min, 0, 59, 0, 360)}deg)`;
-  secHand.style.transform = `rotate(${scale(sec, 0, 59, 0, 360)}deg)`;
+  hourHand.style.transform = `rotate(${scale(
+    hourForClock,
+    0,
+    10,
+    -90,
+    270
+  )}deg)`;
+  minHand.style.transform = `rotate(${scale(min, 0, 60, -90, 270)}deg)`;
+  secHand.style.transform = `rotate(${scale(sec, 0, 60, -90, 270)}deg)`;
 };
 
 function scale(number, inMin, inMax, outMin, outMax) {
